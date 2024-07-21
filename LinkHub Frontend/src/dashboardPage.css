@@ -1,0 +1,34 @@
+.table-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+table {
+  min-width: "80vw";
+}
+
+thead {
+  border: 2px solid gray;
+}
+
+tr {
+  border: 2px solid gray;
+}
+
+td,
+th {
+  font-size: 1rem;
+  border-right: 2px solid gray;
+  padding: 0.5rem;
+  word-break: break-all;
+}
+
+@media only screen and (min-width: 500px) {
+  td,
+  th {
+    font-size: 1.2rem;
+  }
+  .table-name {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,378 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#shareBtn {
+  padding: 0.5rem 0.7rem;
+  margin-right: 5rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 2.2rem;
+  background-color: rgba(247, 246, 246, 0.936);
+  color: black;
+  font-weight: 600;
+  box-shadow: 2px 2px grey;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#subscribeBtn {
+  padding: 0.5rem 0.8rem;
+  margin-left: 5rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 2.2rem;
+  background-color: rgba(247, 246, 246, 0.936);
+  color: black;
+  font-weight: 600;
+  box-shadow: 2px 2px grey;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.img img {
+  border-radius: 50%;
+  width: 7rem;
+}
+
+.title {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.description {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.basicLinks {
+  margin-bottom: 1rem;
+  display: flex;
+  max-width: 60vw;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.basicLinks a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+  padding: 0.5rem 0.7rem;
+  margin: 0.6rem;
+  background-color: #ae81ff;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.basicLinks a:hover {
+  background-color: rgb(247, 247, 247);
+  color: black;
+  border: 1px solid black;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.links a {
+  margin-top: 2rem;
+  width: 45vw;
+  transition: padding 1s;
+  padding: 0.9rem 0;
+  background-color: #49d0eb;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.links a:hover {
+  padding: 1.3rem 0;
+}
+
+.makeLinkhub {
+  margin: 4rem 0;
+}
+
+.makeLinkhub a {
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 2.2rem;
+  background-color: rgb(247, 246, 246);
+  color: black;
+  font-weight: bold;
+  box-shadow: 2px 2px grey;
+}
+
+.footer {
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.shareDiv {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.shareDivHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.1rem;
+}
+
+.closeShareDiv {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.closeShareDiv svg {
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.shareDiv a {
+  margin-top: 1.5rem;
+  width: 70%;
+  transition: padding 1s;
+  padding: 0.5rem 0;
+  background-color: #49d0eb;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.copyDiv {
+  margin: 1rem;
+  width: 85%;
+  border: 1px solid rgb(151, 150, 150);
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  justify-content: space-between;
+}
+
+.copyDiv input {
+  border: none;
+  outline: none;
+  width: 80%;
+  font-size: 1.2rem;
+}
+
+.copyDiv button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-weight: lighter;
+  font-size: 1.2rem;
+}
+
+.makeGreen {
+  color: green;
+}
+
+.makeRed {
+  color: red;
+}
+
+.makeBlue {
+  color: blue;
+}
+
+.subscribeDiv {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.subscribeDivHead {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.35rem;
+}
+
+.subscribeDivDesc {
+  margin: 1rem;
+}
+
+.subscribeDivImg img {
+  border-radius: 50%;
+  width: 5rem;
+}
+
+#email {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  padding: 0.5rem 0.7rem;
+  outline: none;
+  background-color: #e4e4e6;
+  border: none;
+}
+
+#privacyAgree {
+  transform: scale(1.5);
+  margin-right: 0.5rem;
+}
+
+#subscribeClick {
+  margin: 1.5rem 0;
+  padding: 0.5rem 0.8rem;
+  text-decoration: none;
+  border: none;
+  width: 100%;
+  border-radius: 2.2rem;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  box-shadow: 2px 2px grey;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1100px) {
+  .img img {
+    width: 6rem;
+  }
+
+  .title {
+    margin-top: 2rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.28rem;
+    font-weight: bold;
+  }
+
+  .description {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  .links a {
+    margin-top: 1.2rem;
+    width: 90vw;
+    padding: 0.6rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .basicLinks {
+    max-width: 90vw;
+  }
+
+  .basicLinks a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    margin: 0.6rem;
+  }
+
+  #shareBtn {
+    padding: 0.3rem 0.65rem;
+    margin-right: 2.5rem;
+    font-size: 1rem;
+  }
+
+  #subscribeBtn {
+    padding: 0.3rem 0.65rem;
+    margin-left: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .shareDiv {
+    width: 95vw;
+  }
+
+  .shareDivHead {
+    font-size: 1rem;
+  }
+
+  .shareDiv a {
+    margin-top: 1rem;
+    width: 70%;
+    padding: 0.3rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .copyDiv {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .copyDiv input {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .copyDiv button {
+    font-size: 1rem;
+  }
+
+  .subscribeDiv {
+    width: 95vw;
+  }
+}
