@@ -218,7 +218,7 @@ const addLinks = expressAsyncHandler(async (req, res) => {
     try {
       const channel = await Subscriber.findOne({ username });
       if (channel && channel.email.length > 0) {
-        const apiUrl = "http://localhost:8000/";
+        const apiUrl = "http://localhost:8000/"; // Mail sending endpoint url of mail sender server which is on another service
         const postData = {
           username: username,
           linkCount: n,
