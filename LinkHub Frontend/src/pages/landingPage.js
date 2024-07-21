@@ -131,7 +131,8 @@ const LandingPage = () => {
                 boxShadow: "5px 5px #bec2c0",
                 width: "18rem",
               }}
-              src={process.env.PUBLIC_URL + "./media/linkhub page demo.png"}
+              // src={process.env.PUBLIC_URL + "./media/linkhub page demo.png"}
+              src={process.env.PUBLIC_URL + "./media/pageDemo.jpg"}
               alt="LinkHub Page Demo"
             />
           </div>
