@@ -24,8 +24,9 @@ LinkHub is a web application which provides you a webpage to share multiple link
 
 1. **Authentication**:
 
-   - Sign Up.
+   - Sign Up
    - Log In
+   - Email Verification
 
 2. **Dashboard**:
 
@@ -57,8 +58,8 @@ LinkHub is a web application which provides you a webpage to share multiple link
 ## Technologies Used
 
 - **Frontend**: React JS, Chakra UI, HTML, CSS
-- **Backend**: Node JS, Express JS, ejs, Redis, JWT, Nodemailer
-- **Subscriber Mail Sender Service**: Node JS, ejs, Nodemailer
+- **Backend**: Node JS, Express JS, Redis, JWT, Nodemailer, ejs, HTML, CSS
+- **Subscriber Mail Sender Service**: Node JS, ejs, Nodemailer, ejs, HTML, CSS
 - **Database**: mongoDB
 
 ## Hosting Solution
