@@ -15,19 +15,19 @@ This is a full stack LinkTree clone using MERN stack.
 
 LinkHub is a web application which provides you a webpage to share multiple links to your audiences.
 
-### LinkHub Page Sample
+## LinkHub Page Sample
 
 <img src="./readmeMedia/pageDemo.jpg" alt="LinkHub Sample Page" width="300">
 
-### LinkHub Dashboard Page
+## LinkHub Dashboard Page
 
 <img src="./readmeMedia/LinkHub%20Dashboard.jpg" alt="LinkHub Dashboard Page" width="300">
 
-### LinkHub Insights Page
+## LinkHub Insights Page
 
 <img src="./readmeMedia/Linkhub%20Insights%20Page.jpg" alt="LinkHub Insights Page" width="300">
 
-### LinkHub Account Page
+## LinkHub Account Page
 
 <img src="./readmeMedia/Linkhub%20Account%20Page.jpg" alt="LinkHub Account Page" width="300">
 
