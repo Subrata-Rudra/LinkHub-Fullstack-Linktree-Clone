@@ -1013,6 +1013,7 @@ const DashboardPage = () => {
                       <FormLabel>Link URL</FormLabel>
                       <Input
                         placeholder="Enter link url"
+                        value={linkUrl}
                         onChange={(e) => {
                           setLinkUrl(e.target.value);
                         }}
@@ -1023,6 +1024,7 @@ const DashboardPage = () => {
                       <FormLabel>Link Name</FormLabel>
                       <Input
                         placeholder="Enter link name"
+                        value={linkName}
                         onChange={(e) => {
                           setLinkName(e.target.value);
                         }}
