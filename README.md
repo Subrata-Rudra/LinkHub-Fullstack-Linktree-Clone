@@ -19,6 +19,10 @@ LinkHub is a web application which provides you a webpage to share multiple link
 
 <img src="./readmeMedia/pageDemo.jpg" alt="LinkHub Sample Page" width="300">
 
+### LinkHub Dashboard
+
+<img src="./readmeMedia/LinkHub%20Dashboard.jpg" alt="LinkHub Dashboard Page" width="300">
+
 
 ## Features
 
