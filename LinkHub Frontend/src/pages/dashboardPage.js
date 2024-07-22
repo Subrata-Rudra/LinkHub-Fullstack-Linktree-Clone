@@ -10,6 +10,7 @@ import {
   FormLabel,
   Image,
   Input,
+  Divider,
   Modal,
   ModalBody,
   ModalContent,
@@ -398,7 +399,7 @@ const DashboardPage = () => {
       const updatedAddLinks = addLinks.filter((item) => {
         return item.name !== name && item.link !== link;
       });
-      setAddBasicLinks(updatedAddLinks);
+      setAddLinks(updatedAddLinks);
     }
   };
 
@@ -878,46 +879,59 @@ const DashboardPage = () => {
                 maxW={{ base: "95%", md: "lg", lg: "2xl" }}
               >
                 <ModalHeader fontSize="1.4rem">Add Basic Links</ModalHeader>
+                <Divider />
                 <ModalBody fontSize="1rem">
                   <VStack spacing="5px" wordBreak="break-all">
                     <Box>
-                      {addBasicLinks.length > 0 && (
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Link URL</th>
-                              <th>Name</th>
-                              <th>Remove</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {addBasicLinks.map((addBasicLink, i) => (
-                              <tr key={i}>
-                                <td>{addBasicLink.link}</td>
-                                <td>{addBasicLink.displayName}</td>
-                                <td>
-                                  <button
-                                    onClick={() =>
-                                      deleteAddLinkButtonHandler(
-                                        addBasicLink.displayName,
-                                        addBasicLink.link,
-                                        true
-                                      )
-                                    }
-                                  >
-                                    <FontAwesomeIcon icon={faTrash} />
-                                  </button>
-                                </td>
+                      {addBasicLinks.length > 0 ? (
+                        <>
+                          <Text>Added Basic Links</Text>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Link URL</th>
+                                <th>Name</th>
+                                <th>Remove</th>
                               </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                            </thead>
+                            <tbody>
+                              {addBasicLinks.map((addBasicLink, i) => (
+                                <tr key={i}>
+                                  <td>{addBasicLink.link}</td>
+                                  <td>{addBasicLink.displayName}</td>
+                                  <td>
+                                    <button
+                                      onClick={() =>
+                                        deleteAddLinkButtonHandler(
+                                          addBasicLink.displayName,
+                                          addBasicLink.link,
+                                          true
+                                        )
+                                      }
+                                    >
+                                      <FontAwesomeIcon icon={faTrash} />
+                                    </button>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </>
+                      ) : (
+                        <>
+                          <Text>No basic links are added.</Text>
+                          <Text>
+                            Enter Link URL and Link Name and then click the{" "}
+                            <b>Add</b> button.
+                          </Text>
+                        </>
                       )}
                     </Box>
                     <FormControl id="linkUrl" isRequired>
                       <FormLabel>Link URL</FormLabel>
                       <Input
                         placeholder="Enter link url"
+                        value={linkUrl}
                         onChange={(e) => {
                           setLinkUrl(e.target.value);
                         }}
@@ -928,6 +942,7 @@ const DashboardPage = () => {
                       <FormLabel>Link Name</FormLabel>
                       <Input
                         placeholder="Enter link name"
+                        value={linkName}
                         onChange={(e) => {
                           setLinkName(e.target.value);
                         }}
@@ -973,40 +988,52 @@ const DashboardPage = () => {
                 maxW={{ base: "95%", md: "lg", lg: "2xl" }}
               >
                 <ModalHeader fontSize="1.4rem">Add Links</ModalHeader>
+                <Divider />
                 <ModalBody fontSize="1rem">
                   <VStack spacing="5px" wordBreak="break-all">
                     <Box>
-                      {addLinks.length > 0 && (
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Link URL</th>
-                              <th>Name</th>
-                              <th>Remove</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {addLinks.map((addLink, i) => (
-                              <tr key={i}>
-                                <td>{addLink.link}</td>
-                                <td>{addLink.displayName}</td>
-                                <td>
-                                  <button
-                                    onClick={() =>
-                                      deleteAddLinkButtonHandler(
-                                        addLink.displayName,
-                                        addLink.link,
-                                        false
-                                      )
-                                    }
-                                  >
-                                    <FontAwesomeIcon icon={faTrash} />
-                                  </button>
-                                </td>
+                      {addLinks.length > 0 ? (
+                        <>
+                          <Text>Added Links</Text>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Link URL</th>
+                                <th>Name</th>
+                                <th>Remove</th>
                               </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                            </thead>
+                            <tbody>
+                              {addLinks.map((addLink, i) => (
+                                <tr key={i}>
+                                  <td>{addLink.link}</td>
+                                  <td>{addLink.displayName}</td>
+                                  <td>
+                                    <button
+                                      onClick={() =>
+                                        deleteAddLinkButtonHandler(
+                                          addLink.displayName,
+                                          addLink.link,
+                                          false
+                                        )
+                                      }
+                                    >
+                                      <FontAwesomeIcon icon={faTrash} />
+                                    </button>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </>
+                      ) : (
+                        <>
+                          <Text>No links are added.</Text>
+                          <Text>
+                            Enter Link URL and Link Name and then click the{" "}
+                            <b>Add</b> button.
+                          </Text>
+                        </>
                       )}
                     </Box>
                     <FormControl id="linkUrl" isRequired>
