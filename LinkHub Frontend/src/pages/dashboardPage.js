@@ -885,7 +885,7 @@ const DashboardPage = () => {
                     <Box>
                       {addBasicLinks.length > 0 ? (
                         <>
-                          <Text>Added Basic Links</Text>
+                          <Text mb="0.5rem">Added Basic Links</Text>
                           <table>
                             <thead>
                               <tr>
@@ -994,7 +994,7 @@ const DashboardPage = () => {
                     <Box>
                       {addLinks.length > 0 ? (
                         <>
-                          <Text>Added Links</Text>
+                          <Text mb="0.5rem">Added Links</Text>
                           <table>
                             <thead>
                               <tr>
