@@ -108,7 +108,11 @@ const viewAll = expressAsyncHandler(async (req, res) => {
         );
       }
     } else {
-      res.status(200).render("linkhubNotExistPage");
+      if (isPreview === true) {
+        res.status(200).render("linkhubNotCreatedPage");
+      } else {
+        res.status(200).render("linkhubNotExistPage");
+      }
     }
   }
 });
