@@ -24,7 +24,7 @@ const Navbar = () => {
     setUser(linkhubUser);
   }, []);
 
-  const previewUrl = serverConfig + user.username;
+  const previewUrl = serverConfig + "PREVIEW_LINKHUB@" + user.username;
 
   const navbarStyle = {
     position: "fixed",

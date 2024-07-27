@@ -8,12 +8,44 @@ const Visit = require("../models/visitModel");
 
 const getFromRedisAsync = promisify(redis.get).bind(redis);
 
+// To handle response for the base route
+const baseRouteHandler = (req, res) => {
+  res.status(200).send(`
+    <html>
+      <head>
+        <link rel="shortcut icon" href="/LinkHub.png" type="image/x-icon" />
+        <title>Backend LinkHub</title>
+        <style>
+          body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 4rem;
+            margin: 0;
+            padding: 1rem;
+          }
+        </style>
+      </head>
+      <body>
+        <h3>This is LinkHub Backend Server💻</h3>
+      </body>
+    </html>
+    `);
+};
+
 // Get All Details With All Links
 const viewAll = expressAsyncHandler(async (req, res) => {
-  const username = req.params.username;
+  let username = req.params.username;
   if (!username) {
     res.status(400).send("Please send the username");
     throw new Error("Please send the username");
+  }
+  let isPreview = false;
+  if (username.startsWith("PREVIEW_LINKHUB@")) {
+    isPreview = true;
+    username = username.substring(16);
   }
 
   let dataFoundInCache = false;
@@ -24,15 +56,16 @@ const viewAll = expressAsyncHandler(async (req, res) => {
     if (data !== null) {
       // console.log("Got the data in Redis");
       dataFoundInCache = true;
-
       // Sending the readymade(already rendered) LinkHub Page to the visitors
       res.status(200).render("linkhubPage", JSON.parse(data));
 
-      await Visit.findOneAndUpdate(
-        { username: username },
-        { $inc: { visitCount: 1 } },
-        { new: true }
-      );
+      if (isPreview === false) {
+        await Visit.findOneAndUpdate(
+          { username: username },
+          { $inc: { visitCount: 1 } },
+          { new: true }
+        );
+      }
     }
   } catch (error) {
     console.log(
@@ -62,21 +95,22 @@ const viewAll = expressAsyncHandler(async (req, res) => {
         basicLinks: basicLinks,
         links: links,
       };
-
       res.status(200).render("linkhubPage", data);
 
       await redis.set(username, JSON.stringify(data)); // Converting the javascript object to string using stringify and storing it in Redis using the key of username(Format of storing: username(key) --> data(data))
       await redis.expire(username, 3600); // Storing(caching) the data to Redis and setting expiry time to 1 hour(3600 seconds)
 
-      await Visit.findOneAndUpdate(
-        { username: username },
-        { $inc: { visitCount: 1 } },
-        { new: true }
-      );
+      if (isPreview === false) {
+        await Visit.findOneAndUpdate(
+          { username: username },
+          { $inc: { visitCount: 1 } },
+          { new: true }
+        );
+      }
     } else {
       res.status(200).render("linkhubNotExistPage");
     }
   }
 });
 
-module.exports = { viewAll };
+module.exports = { baseRouteHandler, viewAll };
