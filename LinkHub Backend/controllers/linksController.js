@@ -75,13 +75,13 @@ const addBasicLinks = expressAsyncHandler(async (req, res) => {
     try {
       const channel = await Subscriber.findOne({ username });
       if (channel && channel.email.length > 0) {
-        const apiUrl = "http://localhost:8000/"; // Mail sending endpoint url of mail sender server which is on another service
+        const mailServerUrl = process.env.SUBSCRIBER_MAIL_SERVER_URL; // Mail sending endpoint url of mail sender server which is on another service
         const postData = {
           username: username,
           linkCount: n,
         };
         axios
-          .post(apiUrl, postData)
+          .post(mailServerUrl, postData)
           .then((response) => {})
           .catch((err) => {
             console.error("Error: ", err);
@@ -218,13 +218,13 @@ const addLinks = expressAsyncHandler(async (req, res) => {
     try {
       const channel = await Subscriber.findOne({ username });
       if (channel && channel.email.length > 0) {
-        const apiUrl = "http://localhost:8000/"; // Mail sending endpoint url of mail sender server which is on another service
+        const mailServerUrl = process.env.SUBSCRIBER_MAIL_SERVER_URL; // Mail sending endpoint url of mail sender server which is on another service
         const postData = {
           username: username,
           linkCount: n,
         };
         axios
-          .post(apiUrl, postData)
+          .post(mailServerUrl, postData)
           .then((response) => {})
           .catch((err) => {
             console.error("Error: ", err);

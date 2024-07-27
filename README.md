@@ -145,6 +145,7 @@ LinkHub is a web application which provides you a webpage to share multiple link
     PASSWORD = <Your Email's App Password>
     JWT_DATA_MAKER = <Your JWT Data Maker(actually any number of your choice)>
     REDIS_PORT = 6379
+    SUBSCRIBER_MAIL_SERVER_URL = <Your Mail Server's Url>
     ```
 16. Now create file in the root of 'LinkHub Mail Sender' folder and name it '.env'
 17. Now open that '.env' file in code editor and then write this:
